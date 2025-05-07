@@ -52,10 +52,6 @@ public class Calculadora {
                         }
                         break;
 
-                    case 6:
-                        resultado = multiplicar(num1, num2);
-                        System.out.println("Resultado: " + resultado);
-
                     case 5:
                         if (num2 == 0) {
                             System.out.println("No se puede dividir por cero");
@@ -65,6 +61,12 @@ public class Calculadora {
                         }
 
                         break;
+
+                    case 6:
+                        resultado = multiplicar(num1, num2);
+                        System.out.println("Resultado: " + resultado);
+
+                    
                 }
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
