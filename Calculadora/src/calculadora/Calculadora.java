@@ -8,27 +8,28 @@ public class Calculadora {
         Scanner scanner = new Scanner(System.in);
         int opcion;
         double num1, num2, resultado;
-        
+
         do {
             System.out.println("--- Calculadora ---\n");
             System.out.println("1. Sumar\n");
             System.out.println("2. Restar\n");
             System.out.println("3. Multiplicar\n");
             System.out.println("4. Dividir\n");
+            System.out.println("5. Modulo\n");
             System.out.println("6. Exponente\n");
             System.out.println("0. Salir\n");
             System.out.println("-----------------\n");
             System.out.print("Elige una opción: ");
-            
+
             opcion = scanner.nextInt();
             
             if (opcion >= 1 && opcion <= 6) {
                 System.out.print("Introduce el primer número: ");
                 num1 = scanner.nextDouble();
-                
+
                 System.out.print("Introduce el segundo número: ");
                 num2 = scanner.nextDouble();
-                
+
                 switch (opcion) {
                     case 1:
                         resultado = sumar(num1, num2);
@@ -50,33 +51,43 @@ public class Calculadora {
                             System.out.println("Resultado: " + resultado);
                         }
                         break;
+
                     case 6:
                         resultado = multiplicar(num1, num2);
                         System.out.println("Resultado: " + resultado);
+
+                    case 5:
+                        if (num2 == 0) {
+                            System.out.println("No se puede dividir por cero");
+                        } else {
+                        resultado = modulo(num1, num2);
+                        System.out.println("Resultado: " + resultado);
+                        }
+
                         break;
                 }
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
-            
+
         } while (opcion != 0);
-        
+
         System.out.println("Cerrando calculadora.");
         scanner.close();
     }
-    
+
     public static double sumar(double a, double b) {
         return a + b;
     }
-    
+
     public static double restar(double a, double b) {
         return a - b;
     }
-    
+
     public static double multiplicar(double a, double b) {
         return a * b;
-    }  
-    
+    }
+
     public static double dividir(double a, double b) {
         return a / b;
     }
@@ -84,4 +95,10 @@ public class Calculadora {
     public static double exponente(double a, double b) {
         return Math.pow(a,b);
     }
+
+    public static double modulo(double a, double b) {
+
+        return a % b;
+    }
 }
+
