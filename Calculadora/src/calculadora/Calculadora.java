@@ -95,7 +95,13 @@ public class Calculadora {
     public static double exponente(double a, double b) {
         return Math.pow(a,b);
     }
-
+    
+    /**
+     * Documentacion muy detallada de la funcion modulo: hace el modulo.
+     * @param a
+     * @param b
+     * @return 
+     */
     public static double modulo(double a, double b) {
 
         return a % b;
