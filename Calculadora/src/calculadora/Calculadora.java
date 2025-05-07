@@ -15,13 +15,14 @@ public class Calculadora {
             System.out.println("2. Restar\n");
             System.out.println("3. Multiplicar\n");
             System.out.println("4. Dividir\n");
+            System.out.println("6. Exponente\n");
             System.out.println("0. Salir\n");
             System.out.println("-----------------\n");
             System.out.print("Elige una opción: ");
             
             opcion = scanner.nextInt();
             
-            if (opcion >= 1 && opcion <= 4) {
+            if (opcion >= 1 && opcion <= 6) {
                 System.out.print("Introduce el primer número: ");
                 num1 = scanner.nextDouble();
                 
@@ -49,6 +50,10 @@ public class Calculadora {
                             System.out.println("Resultado: " + resultado);
                         }
                         break;
+                    case 6:
+                        resultado = multiplicar(num1, num2);
+                        System.out.println("Resultado: " + resultado);
+                        break;
                 }
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
@@ -74,5 +79,9 @@ public class Calculadora {
     
     public static double dividir(double a, double b) {
         return a / b;
+    }
+    
+    public static double exponente(double a, double b) {
+        return Math.pow(a,b);
     }
 }
